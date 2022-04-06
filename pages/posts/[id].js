@@ -9,14 +9,21 @@ export default function Post({ post }) {
     )
   }
 
+  // const content = post.content.rendered;
+  
   return (
-    <Layout title={post.title}>
+    <Layout title={post.title.rendered}>
       <p className="m-4">
         {"ID : "}
         {post.id}
       </p>
-      <p className="mb-8 text-xl font-bold">{post.title}</p>
-      <p className="px-10">{post.body}</p>
+      <p className="mb-8 text-xl font-bold">{post.title.rendered}</p>
+      <p className="px-10">{post.content.rendered}</p>
+      {/* <div
+        dangerouslySetInnerHTML={{
+          __html: content
+        }}
+      /> */}
       <Link href="/blog-page">
         <div className="flex cursor-pointer mt-12">
           <svg
